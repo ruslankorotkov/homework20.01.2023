@@ -1,13 +1,14 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Transport<T extends Driver> implements Competing {
     private String brand;
     private String model;
     private double engineVolume;
     private T driver;
-    private ArrayList<Mechanic> mechanics;
+    private List<Mechanic> mechanics;
 
-    public Transport(String brand, String model, double engineVolume, T driver, ArrayList<Mechanic> mechanics) {
+    public Transport(String brand, String model, double engineVolume, T driver, List<Mechanic> mechanics) {
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
             this.brand = " default ";
         } else {
@@ -59,11 +60,11 @@ public abstract class Transport<T extends Driver> implements Competing {
         this.driver = driver;
     }
 
-    public ArrayList<Mechanic> getMechanics() {
+    public List<Mechanic> getMechanics() {
         return mechanics;
     }
 
-    public void setMechanics(ArrayList<Mechanic> mechanics) {
+    public void setMechanics(List<Mechanic> mechanics) {
         this.mechanics = mechanics;
     }
 

@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Main {
@@ -20,15 +21,15 @@ public class Main {
         Mechanic luka = new Mechanic<Truck>("Лука Вижинков", "Тяп Ляп сервис", " ремонтирует грузовые авто ");
         Mechanic petr = new Mechanic<Bus>("Пётр Пучёк", "АвтоРемонт", " ремонтирует автобусы ");
         Mechanic misha = new Mechanic<Transport>("Миша Губайдулин", "Ездит как НАДО", " ремонтирует все виды автомобилей ");
-        ArrayList<Mechanic> brigada1;
+        List<Mechanic> brigada1;
         brigada1 = new ArrayList<>(3);
         brigada1.add(foma);
         brigada1.add(misha);
-        ArrayList<Mechanic> brigada2;
+        List<Mechanic> brigada2;
         brigada2 = new ArrayList<>(3);
         brigada2.add(luka);
         brigada2.add(misha);
-        ArrayList<Mechanic> brigada3;
+        List<Mechanic> brigada3;
         brigada3 = new ArrayList<>(3);
         brigada3.add(petr);
         brigada3.add(misha);
@@ -75,24 +76,24 @@ public class Main {
 //        System.out.println(luka);
 //        System.out.println(petr);
 //        System.out.println(misha);
-        Map<Transport,ArrayList> avtoBook = new HashMap<>();
-        avtoBook.put(lada,brigada1);
-        avtoBook.put(audi,brigada1);
-        avtoBook.put(bmv,brigada1);
-        avtoBook.put(kia,brigada1);
-        avtoBook.put(hyundai,brigada3);
-        avtoBook.put(ural,brigada3);
-        avtoBook.put(paz,brigada3);
-        avtoBook.put(mercedes,brigada3);
-        avtoBook.put(kamaz,brigada2);
-        avtoBook.put(zil,brigada2);
-        avtoBook.put(man,brigada2);
-        avtoBook.put(man,brigada2);
-        avtoBook.put(man,brigada3);
-        System.out.println(" Трансформированый список механиков в map "+ avtoBook.toString());
+        Map<Transport, List> avtoBook = new HashMap<>();
+        avtoBook.put(lada, brigada1);
+        avtoBook.put(audi, brigada1);
+        avtoBook.put(bmv, brigada1);
+        avtoBook.put(kia, brigada1);
+        avtoBook.put(hyundai, brigada3);
+        avtoBook.put(ural, brigada3);
+        avtoBook.put(paz, brigada3);
+        avtoBook.put(mercedes, brigada3);
+        avtoBook.put(kamaz, brigada2);
+        avtoBook.put(zil, brigada2);
+        avtoBook.put(man, brigada2);
+        avtoBook.put(man, brigada2);
+        avtoBook.put(man, brigada3);
+        System.out.println(" Трансформированый список механиков в map " + avtoBook.toString());
         System.out.println(avtoBook.get(man) + " Количество авто в нашем мапе не изменится," +
                 " так как новое добавление по старому ключу перезатрет старое значение и в значении по ключу man будет лежать тот значение," +
-                " которое было добавлено по этому ключу последним." );
+                " которое было добавлено по этому ключу последним.");
     }
 
 //    public static void getMechList(Mechanic... mechanics) {

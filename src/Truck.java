@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Truck extends Transport<DriverC> {
     public enum LoadCapacity {
@@ -19,8 +20,8 @@ public class Truck extends Transport<DriverC> {
 
     private LoadCapacity capacity;
 
-    public Truck(String brand, String model, double engineVolume, DriverC driver,ArrayList<Mechanic> mechanics, double capacity) {
-        super(brand, model, engineVolume, driver,mechanics);
+    public Truck(String brand, String model, double engineVolume, DriverC driver, List<Mechanic> mechanics, double capacity) {
+        super(brand, model, engineVolume, driver, mechanics);
         if (capacity <= 3.5) {
             this.capacity = LoadCapacity.N1;
         } else if (capacity <= 12) {

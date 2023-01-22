@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Bus extends Transport<DriverD> {
     public enum PassengerCapacity {
@@ -21,8 +22,8 @@ public class Bus extends Transport<DriverD> {
 
     private PassengerCapacity places;
 
-    public Bus(String brand, String model, double engineVolume, DriverD driver,ArrayList<Mechanic> mechanics, Integer places) {
-        super(brand, model, engineVolume, driver,mechanics);
+    public Bus(String brand, String model, double engineVolume, DriverD driver, List<Mechanic> mechanics, Integer places) {
+        super(brand, model, engineVolume, driver, mechanics);
         if (places <= 10) {
             this.places = PassengerCapacity.EXTRA_SMALL;
         } else if (places <= 25) {
@@ -54,7 +55,7 @@ public class Bus extends Transport<DriverD> {
 
     @Override
     public void diagnosed() {
-        throw new RuntimeException(" Автобусы диагностику проходить не могут.   Нарушитель "+getBrand());
+        throw new RuntimeException(" Автобусы диагностику проходить не могут.   Нарушитель " + getBrand());
     }
 
     @Override

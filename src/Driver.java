@@ -3,7 +3,6 @@ public abstract class Driver {
     public boolean driverLicense;
     private String experience;
 
-
     public Driver(String name, boolean driverLicense, String experience) {
         if (name == null || name.isEmpty() || name.isBlank()) {
             this.name = "default";
@@ -17,7 +16,6 @@ public abstract class Driver {
             this.experience = experience;
         }
     }
-
 
     public String getName() {
         return name;
