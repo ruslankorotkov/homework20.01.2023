@@ -73,6 +73,8 @@ public class Main {
 //        System.out.println(luka);
 //        System.out.println(petr);
 //        System.out.println(misha);
+
+
         Map<Transport, List<Mechanic<?>>> avtoBook = new LinkedHashMap<>();
         avtoBook.put(lada, brigada1);
         avtoBook.put(audi, brigada1);
@@ -89,10 +91,12 @@ public class Main {
         avtoBook.put(man, brigada2);
         for (Map.Entry<Transport, List<Mechanic<?>>> element : avtoBook.entrySet()) {
             System.out.println(" Трансформированый список АВТО-->МЕХАНИК в map- КЛЮЧ:" + element.getKey() + "ЗНАЧЕНИЕ: " + element.getValue());
+            System.out.println(" Хешкод ключа "+element.getKey().hashCode() + " хешкод значения "+element.getValue().hashCode());
         }
         System.out.println(" Если в случае ошибки какой-либо из объектов будет занесен в базу два раза, то в консоль выведется информация без повторов, " +
                 "так как новое добавление по старому ключу перезатрет старое значение.");
     }
+
 
 //    public static void getMechList(Mechanic... mechanics) {
 //        System.out.println(" Механики список ");
@@ -155,6 +159,7 @@ public class Main {
 //            System.out.println("Проверка завершена. Из рассмотренных. " + count + " водителей имеют права.");
 //        }
 //    }
+
 }
 
 
