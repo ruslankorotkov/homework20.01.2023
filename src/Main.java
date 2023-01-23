@@ -73,7 +73,7 @@ public class Main {
 //        System.out.println(luka);
 //        System.out.println(petr);
 //        System.out.println(misha);
-        LinkedHashMap<Transport, List<Mechanic<?>>> avtoBook = new LinkedHashMap<>();
+        Map<Transport, List<Mechanic<?>>> avtoBook = new LinkedHashMap<>();
         avtoBook.put(lada, brigada1);
         avtoBook.put(audi, brigada1);
         avtoBook.put(bmv, brigada1);
