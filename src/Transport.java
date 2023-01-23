@@ -6,9 +6,9 @@ public abstract class Transport<T extends Driver> implements Competing {
     private String model;
     private double engineVolume;
     private T driver;
-    private List<Mechanic> mechanics;
+    private List<Mechanic<?>> mechanics;
 
-    public Transport(String brand, String model, double engineVolume, T driver, List<Mechanic> mechanics) {
+    public Transport(String brand, String model, double engineVolume, T driver, List<Mechanic<?>> mechanics) {
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
             this.brand = " default ";
         } else {
@@ -60,11 +60,11 @@ public abstract class Transport<T extends Driver> implements Competing {
         this.driver = driver;
     }
 
-    public List<Mechanic> getMechanics() {
+    public List<Mechanic<?>> getMechanics() {
         return mechanics;
     }
 
-    public void setMechanics(List<Mechanic> mechanics) {
+    public void setMechanics(List<Mechanic<?>> mechanics) {
         this.mechanics = mechanics;
     }
 

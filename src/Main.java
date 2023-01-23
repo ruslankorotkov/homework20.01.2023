@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
 
@@ -21,15 +18,15 @@ public class Main {
         Mechanic luka = new Mechanic<Truck>("Лука Вижинков", "Тяп Ляп сервис", " ремонтирует грузовые авто ");
         Mechanic petr = new Mechanic<Bus>("Пётр Пучёк", "АвтоРемонт", " ремонтирует автобусы ");
         Mechanic misha = new Mechanic<Transport>("Миша Губайдулин", "Ездит как НАДО", " ремонтирует все виды автомобилей ");
-        List<Mechanic> brigada1;
+        List<Mechanic<?>> brigada1;
         brigada1 = new ArrayList<>(3);
         brigada1.add(foma);
         brigada1.add(misha);
-        List<Mechanic> brigada2;
+        List<Mechanic<?>> brigada2;
         brigada2 = new ArrayList<>(3);
         brigada2.add(luka);
         brigada2.add(misha);
-        List<Mechanic> brigada3;
+        List<Mechanic<?>> brigada3;
         brigada3 = new ArrayList<>(3);
         brigada3.add(petr);
         brigada3.add(misha);
@@ -50,9 +47,9 @@ public class Main {
 //        misha.carryOutMaintenance(bmv);
 //        luka.carryOutMaintenance(lada);
 //        foma.fixTheCar();
-        System.out.println(" Бригада 1 " + brigada1.toString());
-        System.out.println(" Бригада 2 " + brigada2.toString());
-        System.out.println(" Бригада 3 " + brigada3.toString());
+//        System.out.println(" Бригада 1 " + brigada1.toString());
+//        System.out.println(" Бригада 2 " + brigada2.toString());
+//        System.out.println(" Бригада 3 " + brigada3.toString());
 //        System.out.println(lada);
 //        System.out.println(" водитель " + boris.getName() + " управляет автомобилем " + mercedes + " и будет участвовать в заезде. ");
 //        System.out.println(" водитель " + oleg.getName() + " управляет автомобилем " + kamaz + " и будет участвовать в заезде. ");
@@ -76,7 +73,7 @@ public class Main {
 //        System.out.println(luka);
 //        System.out.println(petr);
 //        System.out.println(misha);
-        Map<Transport, List> avtoBook = new HashMap<>();
+        Map<Transport, List<Mechanic<?>>> avtoBook = new HashMap<>();
         avtoBook.put(lada, brigada1);
         avtoBook.put(audi, brigada1);
         avtoBook.put(bmv, brigada1);
@@ -90,10 +87,11 @@ public class Main {
         avtoBook.put(man, brigada2);
         avtoBook.put(man, brigada2);
         avtoBook.put(man, brigada3);
-        System.out.println(" Трансформированый список механиков в map " + avtoBook.toString());
-        System.out.println(avtoBook.get(man) + " Количество авто в нашем мапе не изменится," +
-                " так как новое добавление по старому ключу перезатрет старое значение и в значении по ключу man будет лежать тот значение," +
-                " которое было добавлено по этому ключу последним.");
+        for (Map.Entry<Transport, List<Mechanic<?>>> element : avtoBook.entrySet()) {
+            System.out.println(" Трансформированый список АВТО-->МЕХАНИК в map- КЛЮЧ:" + element.getKey() + "ЗНАЧЕНИЕ: " + element.getValue());
+        }
+        System.out.println(" Если в случае ошибки какой-либо из объектов будет занесен в базу два раза, то в консоль выведется информация без повторов, " +
+                "так как новое добавление по старому ключу перезатрет старое значение.");
     }
 
 //    public static void getMechList(Mechanic... mechanics) {
@@ -101,7 +99,7 @@ public class Main {
 //        ArrayList<Mechanic> mechanicssList;
 //        mechanicssList = new ArrayList<>();
 //        for (Mechanic element : mechanics) {
-//            mechanicssList.add(element);
+//            mechanicssList.add(element);element.getKey() +
 //        }
 //        System.out.println("  mechanicssList: " + mechanicssList);
 //    }
