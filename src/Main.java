@@ -73,7 +73,7 @@ public class Main {
 //        System.out.println(luka);
 //        System.out.println(petr);
 //        System.out.println(misha);
-        Map<Transport, List<Mechanic<?>>> avtoBook = new HashMap<>();
+        LinkedHashMap<Transport, List<Mechanic<?>>> avtoBook = new LinkedHashMap<>();
         avtoBook.put(lada, brigada1);
         avtoBook.put(audi, brigada1);
         avtoBook.put(bmv, brigada1);
@@ -85,8 +85,8 @@ public class Main {
         avtoBook.put(kamaz, brigada2);
         avtoBook.put(zil, brigada2);
         avtoBook.put(man, brigada2);
-        avtoBook.put(man, brigada2);
         avtoBook.put(man, brigada3);
+        avtoBook.put(man, brigada2);
         for (Map.Entry<Transport, List<Mechanic<?>>> element : avtoBook.entrySet()) {
             System.out.println(" Трансформированый список АВТО-->МЕХАНИК в map- КЛЮЧ:" + element.getKey() + "ЗНАЧЕНИЕ: " + element.getValue());
         }
